@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login And Registration</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
+<body>
+  
+    <% JSON.stringify(messages) %>
+    <% if(messages.error) { %>
+      <div class="alert alert-danger">
+      <% for (var x of messages.error) { %>
+        <h6 align="center" style="color:red;"><%= x %></h6>
+      </div>
+      <% } %>
+    <% } %>
+  
+
+    <h1 align="center" style="font-size:25px;"><strong>Welcome To The Site!</strong></h1>
+    <br>
+  <div class="container"
+  <h1 style="font-size:25px;"><strong>Registration:</strong></h1>
+    <form action="/users" method="POST">
+      <br>
+      <p>Email: <input type="email" name="email" required></p>
+      <p>First Name: <input type="text" name="first_name" required></p>
+      <p>Last Name: <input type="text" name="last_name" required></p>
+      <p>Password: <input type="password" name="password" required></p>
+      <p>Birthday: <input type="date" name="birthday" required></p>
+      <p><input type="submit" class="btn btn-success" value="Register"></p>
+    </form>
+    <hr>
+    <form action="/sessions" method="POST">
+      <h1 style="font-size:25px;"><strong>Login:</strong></h1>
+      <p>E-mail:<input type="email" name="email" required></p>
+      <p>Password:<input type="password" name="password" required></p>
+      <p><input type="submit" class="btn btn-success" value="Login"></p>
+    </form>
+    </div>
+  </div>
+</body>
+</html>
